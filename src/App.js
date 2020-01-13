@@ -1,25 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider, ColorMode } from 'theme-ui';
+import { Box } from '@theme-ui/components';
+import theme from 'theme';
+import ColorModeSwitcher from 'ColorModeSwitcher';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <ColorMode />
+      <ColorModeSwitcher />
+      <Box p={4} color="text" bg="muted">
+        Beep
+      </Box>
+    </ThemeProvider>
   );
 }
 
